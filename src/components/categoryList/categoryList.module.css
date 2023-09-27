@@ -1,0 +1,41 @@
+.style {
+    background-color: #57c4ff31;
+}
+.style:hover {
+    background-color: #11425c3e;
+}
+
+.fashion {
+    background-color: #da85c731;
+}
+.fashion:hover {
+    background-color: #5e2a5238;
+}
+
+.food {
+    background-color: #7fb88133;
+}
+.food:hover {
+    background-color: #184e1932;
+}
+
+.travel {
+    background-color: #ff795736;
+}
+.travel:hover {
+    background-color: #62302436;
+}
+
+.culture {
+    background-color: #ffb04f45;
+}
+.culture:hover {
+    background-color: #79542737;
+}
+
+.coding {
+    background-color: #5e4fff31;
+}
+.coding:hover {
+    background-color: #1e195358;
+}

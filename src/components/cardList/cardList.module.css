@@ -1,0 +1,11 @@
+.para{
+    color: var(--softTextColor);
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn{
+    background: var(--textColor);
+    color: var(--bg);
+    border-radius: 14px;
+    text-align: center;
+}
