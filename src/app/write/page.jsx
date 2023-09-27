@@ -17,7 +17,7 @@ import { toast } from "react-toastify";
 
 const storage = getStorage(app);
 
-const page = () => {
+const WritePage = () => {
     const [title, setTitle] = useState("")
     const [file, setFile] = useState(null)
     const [category, setCategory] = useState("style")
@@ -185,4 +185,4 @@ const page = () => {
     }
 }
 
-export default page
+export default WritePage
