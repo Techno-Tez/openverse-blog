@@ -119,6 +119,11 @@ const WritePage = () => {
         router.push("/")
     }
 
+    if (typeof window !== "object") {
+        return(
+            <div>Hello</div>
+        )
+      } 
 
     else {
 
