@@ -3,7 +3,7 @@ import Menu from "@/components/menu/Menu"
 import Image from "next/image"
 
 const fetchBlog = async (slug) => {
-    const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    const res = await fetch(`/api/posts/${slug}`, {
         cache: "no-cache",
     })
 
