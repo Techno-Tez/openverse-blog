@@ -23,14 +23,14 @@ const Comments = ({ postSlug }) => {
     const { status } = useSession();
 
     const { data, mutate, isLoading } = useSWR(
-        `https://openverse-blog.vercel.app/api/comments?postSlug=${postSlug}`,
+        `http://localhost:3000/api/comments?postSlug=${postSlug}`,
         fetcher
     );
 
     const [desc, setDesc] = useState("");
 
     const handleSubmit = async () => {
-        await fetch("https://openverse-blog.vercel.app/api/comments", {
+        await fetch("http://localhost:3000/api/comments", {
             method: "POST",
             body: JSON.stringify({ desc, postSlug }),
         });
