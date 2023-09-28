@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const fetchBlogs = async (page, cat) => {
-    const res = await fetch(`/api/posts?page=${page}&cat=${cat || ""}`, {
+    const res = await fetch(`https://openverse-blog.vercel.app/api/posts?page=${page}&cat=${cat || ""}`, {
         cache: "no-cache",
     })
 
