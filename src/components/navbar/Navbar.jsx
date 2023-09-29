@@ -15,6 +15,13 @@ const ks = Kaushan_Script({
 
 const link = [
     {
+        name: "HOME",
+        link: " ",
+        favIcon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+    },
+    {
         name: "ABOUT",
         link: "about-us",
         favIcon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -46,6 +53,7 @@ const Navbar = () => {
                 <div className='hidden lg:flex items-center gap-8 poppins font-medium'>
 
                     <ThemeToggle />
+                    <Link href="/" className=' '>Home</Link>
                     <Link href="/about-us" className=' '>About</Link>
 
                     <Link href="/contact" className=''>Contact</Link>
@@ -69,8 +77,8 @@ const Navbar = () => {
                                             progress: undefined,
                                             theme: "light",
                                         });
-                                        
-                                        }}>Logout</Link>
+
+                                    }}>Logout</Link>
                                 </div>
                             )
                     }
@@ -133,7 +141,7 @@ const Navbar = () => {
                                         </svg>
                                         WRITE
                                     </Link>
-                                    <Link href="/" className='flex gap-2' onClick={() => { 
+                                    <Link href="/" className='flex gap-2' onClick={() => {
                                         signOut();
                                         setBurger(false)
                                         toast.success('Logged out Successfully', {
@@ -146,7 +154,7 @@ const Navbar = () => {
                                             progress: undefined,
                                             theme: "light",
                                         });
-                                        }}>
+                                    }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                                         </svg>
@@ -157,7 +165,7 @@ const Navbar = () => {
                     }
                     <ThemeToggle />
                 </div>
-                <div className='absolute bottom-15 left-5 text-2xl flex flex-col gap-2'>
+                <div className='absolute bottom-[65px] left-5 text-2xl flex flex-col gap-2'>
                     <h3 className={ks.className}>OpenVerse</h3>
                     <h3 className="text-sm ">by <span className='text-yellow-500 font-medium'>TechTez</span></h3>
                 </div>
