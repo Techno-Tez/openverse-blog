@@ -10,7 +10,7 @@ const ks = Kaushan_Script({
 })
 
 const fetchCategory = async () => {
-    const res = await fetch("http://localhost:3000/api/categories", {
+    const res = await fetch("https://openverse-blog.vercel.app/api/categories", {
         cache: "no-cache",
     })
     

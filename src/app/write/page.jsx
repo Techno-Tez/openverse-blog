@@ -8,8 +8,6 @@ import {
 } from "firebase/storage";
 
 import React, { useEffect, useState } from 'react'
-import ReactQuill from 'react-quill'
-import "react-quill/dist/quill.bubble.css"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { app } from "@/utils/firebase";
@@ -65,7 +63,7 @@ const WritePage = () => {
                             draggable: true,
                             progress: undefined,
                             theme: "light",
-                            });
+                        });
                     });
                 }
             );
@@ -83,7 +81,7 @@ const WritePage = () => {
             .replace(/^-+|-+$/g, "");
 
     const handleSubmit = async () => {
-        const res = await fetch("http://localhost:3000/api/posts", {
+        const res = await fetch("/api/posts", {
             method: "POST",
             body: JSON.stringify({
                 title: title,
@@ -93,18 +91,31 @@ const WritePage = () => {
                 slug: slugify(title)
             })
         })
-        toast.success('Published Succesfully', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            });
         console.log(res);
-        router.push(`/blogs?cat=${category}`)
+        if (res.status === 200) {
+            toast.success('Published Succesfully', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }else{
+            toast.error('Something went wrong', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        // router.push(`/blogs?cat=${category}`)
     }
 
     if (status === "loading") {
@@ -120,10 +131,10 @@ const WritePage = () => {
     }
 
     if (typeof window !== "object") {
-        return(
+        return (
             <div>Hello</div>
         )
-      } 
+    }
 
     else {
 
@@ -133,7 +144,7 @@ const WritePage = () => {
 
                 <div className="flex gap-2 items-center">
                     <h3>Category : </h3>
-                    <select name="category" value={category} onChange={e=> {setCategory(e.target.value); console.log(category);}} id="category" className="capitalize w-max rounded-md outline-none">
+                    <select name="category" value={category} onChange={e => { setCategory(e.target.value); console.log(category); }} id="category" className="capitalize w-max rounded-md outline-none">
                         <option value="style">style</option>
                         <option value="travel">travel</option>
                         <option value="coding">coding</option>
@@ -176,13 +187,7 @@ const WritePage = () => {
                     )}
                 </div>
 
-                <ReactQuill
-                    className='w-full h-[40vh]'
-                    theme='bubble'
-                    value={value}
-                    onChange={setValue}
-                    placeholder='Tell your Story...'
-                />
+                <textarea className='min-h-screen p-2 w-full outline-none text-[15px]' placeholder='Tell your story...' value={value} onChange={e => setValue(e.target.value)}/>
 
                 <button className='w-max mx-auto md:absolute md:top-[0px] md:right-[0px] bg-green-600 text-white px-4 py-2 rounded-full' onClick={handleSubmit}>Publish</button>
             </div>
