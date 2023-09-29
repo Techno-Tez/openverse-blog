@@ -157,7 +157,7 @@ const Navbar = () => {
                     }
                     <ThemeToggle />
                 </div>
-                <div className='absolute bottom-10 left-5 text-2xl flex flex-col gap-2'>
+                <div className='absolute bottom-15 left-5 text-2xl flex flex-col gap-2'>
                     <h3 className={ks.className}>OpenVerse</h3>
                     <h3 className="text-sm ">by <span className='text-yellow-500 font-medium'>TechTez</span></h3>
                 </div>
