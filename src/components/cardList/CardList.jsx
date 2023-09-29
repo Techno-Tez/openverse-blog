@@ -52,7 +52,7 @@ const CardList = async ({ page, cat }) => {
                 })}
 
             </div>
-            <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+            <Pagination cat={cat} page={page} hasPrev={hasPrev} hasNext={hasNext} />
         </div>
     )
 }
