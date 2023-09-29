@@ -93,7 +93,7 @@ const WritePage = () => {
         })
         console.log(res);
         if (res.status === 200) {
-            toast.success('Published Succesfully', {
+            toast.success('Published Successfully', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -115,7 +115,7 @@ const WritePage = () => {
                 theme: "light",
             });
         }
-        // router.push(`/blogs?cat=${category}`)
+        router.push(`/blogs?cat=${category}`)
     }
 
     if (status === "loading") {

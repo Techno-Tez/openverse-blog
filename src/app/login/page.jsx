@@ -1,6 +1,7 @@
 "use client"
 import { useSession, signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
+import { toast } from "react-toastify"
 
 const LoginPage = () => {
     const {data, status} = useSession()
@@ -15,6 +16,16 @@ const LoginPage = () => {
     }
 
     if (status === "authenticated"){
+        toast.success('Login Successful', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
         router.push("/")
     }
 
