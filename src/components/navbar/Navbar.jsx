@@ -6,6 +6,7 @@ import Link from 'next/link'
 import ThemeToggle from '../themeToggle/ThemeToggle'
 import { Kaushan_Script } from 'next/font/google'
 import { signOut, useSession } from 'next-auth/react'
+import { toast } from 'react-toastify'
 
 const ks = Kaushan_Script({
     weight: '400',
