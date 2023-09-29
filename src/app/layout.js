@@ -15,8 +15,8 @@ const poppins = Poppins({
 
 
 export const metadata = {
-  title: 'Blog App',
-  description: 'The best blog app!',
+  title: 'OpenVerse By-TechTez',
+  description: 'OpenVerse is the place where you can share your thoughts freely, it provides an open environment to everyone to share their knowledge, feelings, and beliefs. Best Blog App in the Market right now!',
 }
 
 export default function RootLayout({ children }) {
