@@ -12,6 +12,7 @@ import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { app } from "@/utils/firebase";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 const storage = getStorage(app);
 
@@ -19,7 +20,7 @@ const WritePage = () => {
     const [title, setTitle] = useState("")
     const [file, setFile] = useState(null)
     const [category, setCategory] = useState("style")
-    const [imageURL, setImageURL] = useState("")
+    const [imageURL, setImageURL] = useState(null)
     const [open, setopen] = useState(false)
     const [value, setValue] = useState("")
 
@@ -144,13 +145,13 @@ const WritePage = () => {
 
                 <div className="flex gap-2 items-center">
                     <h3>Category : </h3>
-                    <select name="category" value={category} onChange={e => { setCategory(e.target.value); console.log(category); }} id="category" className="capitalize w-max rounded-md outline-none">
-                        <option value="style">style</option>
-                        <option value="travel">travel</option>
-                        <option value="coding">coding</option>
-                        <option value="food">food</option>
-                        <option value="fashion">fashion</option>
-                        <option value="culture">culture</option>
+                    <select name="category" value={category} onChange={e => { setCategory(e.target.value); console.log(category); }} id="category" className="capitalize w-max rounded-md outline-none bg-inherit text-inherit">
+                        <option className="bg-blue-300 text-black" value="style">style</option>
+                        <option className="bg-blue-300 text-black" value="travel">travel</option>
+                        <option className="bg-blue-300 text-black" value="coding">coding</option>
+                        <option className="bg-blue-300 text-black" value="food">food</option>
+                        <option className="bg-blue-300 text-black" value="fashion">fashion</option>
+                        <option className="bg-blue-300 text-black" value="culture">culture</option>
                     </select>
                 </div>
 
@@ -176,7 +177,13 @@ const WritePage = () => {
                     )}
                 </div>
 
-                <textarea className='min-h-screen p-2 w-full outline-none text-[15px]' placeholder='Tell your story...' value={value} onChange={e => setValue(e.target.value)}/>
+                {imageURL && (
+                    <div className="h-[30vh] md:h-[60vh] rounded-lg w-full overflow-hidden relative">
+                        <Image src={imageURL} fill={true} alt="Thumbnail" className="rounded-lg object-cover"/>
+                    </div>
+                )}
+
+                <textarea className='min-h-screen p-2 w-full outline-none text-[15px] bg-inherit' placeholder='Tell your story...' value={value} onChange={e => setValue(e.target.value)}/>
 
                 <button className='w-max mx-auto md:absolute md:top-[0px] md:right-[0px] bg-green-600 text-white px-4 py-2 rounded-full' onClick={handleSubmit}>Publish</button>
             </div>

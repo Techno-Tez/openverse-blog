@@ -45,7 +45,7 @@ const CardList = async ({ page, cat }) => {
                                     {blog.title}
                                 </h1>
 
-                                <div className={styles.para} dangerouslySetInnerHTML={{ __html: blog?.desc.substring(0, 100) + "..." }}></div>
+                                <div className={`${styles.para} text-white`} dangerouslySetInnerHTML={{ __html: blog?.desc.substring(0, 100) + "..." }}></div>
                             </div>
                         </Link>
                     )
