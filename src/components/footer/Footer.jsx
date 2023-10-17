@@ -16,7 +16,7 @@ const Footer = () => {
           <Image src="/logo.png" height={50} width={50} alt='logo_image'/>
           <span className={`ml-3 text-3xl ${ks.className}`}>OpenVerse</span>
         </Link>
-        <p className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:py-2 sm:mt-0 mt-4">© 2023 TechTez —
+        <p className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:py-2 sm:mt-0 mt-4">© 2023 TechTez — All rights reserved. 
           <Link href="https://www.instagram.com/_pateltejas_/" className="ml-1 text-transparent font-medium bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600" rel="noopener noreferrer" target="_blank">@_pateltejas_</Link>
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start items-center">
